@@ -1,0 +1,1848 @@
+{
+	"info": {
+		"_postman_id": "7ebfc8a7-ff86-4373-a680-01cd6b2fd034",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3496196"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();\r",
+									"\r",
+									"pm.collectionVariables.set('api_token', json.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Gateway-Auth-Token",
+								"value": "tk_f2198cc671b5289fa856"
+							},
+							{
+								"key": "Gateway-Auth-Secret",
+								"value": "3d15e8ed6131446ea7e3456728b1211f"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"senha123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Gateway-Auth-Token",
+										"value": "tk_f2198cc671b5289fa856"
+									},
+									{
+										"key": "Gateway-Auth-Secret",
+										"value": "3d15e8ed6131446ea7e3456728b1211f"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"senha123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:41:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"3|WuHRUb23NP1td8vfrsex17yVZT6mEMN85vMnT9w8b8b9f846\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Test User\",\n        \"email\": \"test@example.com\",\n        \"email_verified_at\": \"2025-11-16T18:05:59.000000Z\",\n        \"role\": \"ADMIN\",\n        \"created_at\": \"2025-11-16T18:06:00.000000Z\",\n        \"updated_at\": \"2025-11-16T18:06:00.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Me",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Gateway-Auth-Token",
+								"value": "tk_f2198cc671b5289fa856"
+							},
+							{
+								"key": "Gateway-Auth-Secret",
+								"value": "3d15e8ed6131446ea7e3456728b1211f"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Gateway-Auth-Token",
+										"value": "tk_f2198cc671b5289fa856"
+									},
+									{
+										"key": "Gateway-Auth-Secret",
+										"value": "3d15e8ed6131446ea7e3456728b1211f"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost/api/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:41:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"email_verified_at\": \"2025-11-16T18:05:59.000000Z\",\n    \"role\": \"ADMIN\",\n    \"created_at\": \"2025-11-16T18:06:00.000000Z\",\n    \"updated_at\": \"2025-11-16T18:06:00.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{api_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Gateway-Auth-Token",
+								"value": "tk_f2198cc671b5289fa856"
+							},
+							{
+								"key": "Gateway-Auth-Secret",
+								"value": "3d15e8ed6131446ea7e3456728b1211f"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Gateway-Auth-Token",
+										"value": "tk_f2198cc671b5289fa856"
+									},
+									{
+										"key": "Gateway-Auth-Secret",
+										"value": "3d15e8ed6131446ea7e3456728b1211f"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/api/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:41:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Deslogado\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:41:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\",\n            \"email_verified_at\": \"2025-11-16T18:05:59.000000Z\",\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2025-11-16T18:06:00.000000Z\",\n            \"updated_at\": \"2025-11-16T18:06:00.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Test User 2\",\n            \"email\": \"test2@example.com\",\n            \"email_verified_at\": null,\n            \"role\": \"ADMIN\",\n            \"created_at\": \"2025-11-17T00:41:35.000000Z\",\n            \"updated_at\": \"2025-11-17T00:41:35.000000Z\"\n        }\n    ],\n    \"first_page_url\": \"http://localhost/api/users?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost/api/users?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"page\": null,\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost/api/users?page=1\",\n            \"label\": \"1\",\n            \"page\": 1,\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"page\": null,\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost/api/users\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 2,\n    \"total\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/users/:user_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:42:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Test User\",\n    \"email\": \"test@example.com\",\n    \"email_verified_at\": \"2025-11-16T18:05:59.000000Z\",\n    \"role\": \"ADMIN\",\n    \"created_at\": \"2025-11-16T18:06:00.000000Z\",\n    \"updated_at\": \"2025-11-16T18:06:00.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/users/:user_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:38:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Usuário removido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test User 2\",\r\n    \"email\": \"test2@example.com\",\r\n    \"password\": \"teste123456\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test User 2\",\r\n    \"email\": \"test2@example.com\",\r\n    \"password\": \"teste123456\",\r\n    \"role\": \"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:41:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Test User 2\",\n    \"email\": \"test2@example.com\",\n    \"role\": \"ADMIN\",\n    \"updated_at\": \"2025-11-17T00:41:35.000000Z\",\n    \"created_at\": \"2025-11-17T00:41:35.000000Z\",\n    \"id\": 3\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:43:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Produto X\",\n            \"amount\": \"99.99\",\n            \"created_at\": \"2025-11-16T18:13:33.000000Z\",\n            \"updated_at\": \"2025-11-16T18:13:33.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Produto Y\",\n            \"amount\": \"154.58\",\n            \"created_at\": \"2025-11-17T00:43:00.000000Z\",\n            \"updated_at\": \"2025-11-17T00:43:00.000000Z\"\n        }\n    ],\n    \"first_page_url\": \"http://localhost/api/products?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost/api/products?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"page\": null,\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost/api/products?page=1\",\n            \"label\": \"1\",\n            \"page\": 1,\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"page\": null,\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost/api/products\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 2,\n    \"total\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "View product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/products/:product_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"products",
+								":product_id"
+							],
+							"variable": [
+								{
+									"key": "product_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/products/:product_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"products",
+										":product_id"
+									],
+									"variable": [
+										{
+											"key": "product_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:43:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Produto X\",\n    \"amount\": \"99.99\",\n    \"created_at\": \"2025-11-16T18:13:33.000000Z\",\n    \"updated_at\": \"2025-11-16T18:13:33.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/products/:product_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"products",
+								":product_id"
+							],
+							"variable": [
+								{
+									"key": "product_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/products/:product_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"products",
+										":product_id"
+									],
+									"variable": [
+										{
+											"key": "product_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:43:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Produto removido\"\n}"
+						},
+						{
+							"name": "Delete product 404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/products/:product_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"products",
+										":product_id"
+									],
+									"variable": [
+										{
+											"key": "product_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:43:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Recurso não encontrado.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Produto Y\",\r\n    \"amount\": 154.58\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Produto Y\",\r\n    \"amount\": 154.58\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:43:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Produto Y\",\n    \"amount\": 154.58,\n    \"updated_at\": \"2025-11-17T00:43:00.000000Z\",\n    \"created_at\": \"2025-11-17T00:43:00.000000Z\",\n    \"id\": 3\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "List clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List clients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/clients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:44:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Maria\",\n            \"email\": \"maria@example.com\",\n            \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n            \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Carlos\",\n            \"email\": \"carlos@example.com\",\n            \"created_at\": \"2025-11-16T19:30:10.000000Z\",\n            \"updated_at\": \"2025-11-16T19:30:10.000000Z\"\n        }\n    ],\n    \"first_page_url\": \"http://localhost/api/clients?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost/api/clients?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"page\": null,\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost/api/clients?page=1\",\n            \"label\": \"1\",\n            \"page\": 1,\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"page\": null,\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost/api/clients\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 2,\n    \"total\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "View client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/clients/:client_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"clients",
+								":client_id"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/clients/:client_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"clients",
+										":client_id"
+									],
+									"variable": [
+										{
+											"key": "client_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:44:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Maria\",\n    \"email\": \"maria@example.com\",\n    \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n    \"updated_at\": \"2025-11-16T18:56:50.000000Z\",\n    \"transactions\": [\n        {\n            \"id\": 12,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"922fd37b-0dcc-49ee-9bb9-41b6a3d4b565\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T19:06:18.000000Z\",\n            \"updated_at\": \"2025-11-16T19:06:18.000000Z\",\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\"\n            },\n            \"products\": [\n                {\n                    \"id\": 23,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 12,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 13,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"74a2ced1-b7d0-41bc-88f3-62080ed542c5\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T19:07:18.000000Z\",\n            \"updated_at\": \"2025-11-16T19:07:19.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 25,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 13,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 17,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"f92bf61e-156e-4959-b86f-d721979bd977\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:36.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:36.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 30,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 17,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 18,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"e830c318-af41-40a0-8f61-dbf57acd79b3\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:38.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:38.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 32,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 18,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 19,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"372c5d3b-08b0-4b5d-be60-1cc87d671fc3\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:45.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:45.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 34,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 19,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 20,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"3e670e72-c623-4342-9b50-6255d236cd9b\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:46.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:46.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 36,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 20,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 21,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"8b193b1d-a854-4c16-a366-2523470fc89f\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:47.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:47.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 38,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 21,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 22,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"1f75d713-a8db-459c-8273-9093150c89e6\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:57.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:01.000000Z\",\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\"\n            },\n            \"products\": [\n                {\n                    \"id\": 40,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 22,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 23,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"205f82ee-a0b1-4fd7-89a9-6856e33d75c1\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:04.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:08.000000Z\",\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\"\n            },\n            \"products\": [\n                {\n                    \"id\": 42,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 23,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 24,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"85fe95e7-a286-42f4-9d1f-0378a9226e18\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:30.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:31.000000Z\",\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\"\n            },\n            \"products\": [\n                {\n                    \"id\": 44,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 24,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 25,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"59a7273e-e4be-4810-8a87-c3e96711f365\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:49.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:58.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 46,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 25,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 26,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"713e5c5a-f467-46c9-904f-259c881e7de5\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:07:00.000000Z\",\n            \"updated_at\": \"2025-11-16T20:07:04.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 48,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 26,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 27,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"9ed5b945-9d7a-491e-8167-0dd6b27d2adc\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:09:21.000000Z\",\n            \"updated_at\": \"2025-11-16T20:09:25.000000Z\",\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\"\n            },\n            \"products\": [\n                {\n                    \"id\": 50,\n                    \"quantity\": 1,\n                    \"product_id\": 1,\n                    \"transaction_id\": 27,\n                    \"product\": {\n                        \"id\": 1,\n                        \"name\": \"Produto X\",\n                        \"amount\": \"99.99\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "List transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List transactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:44:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 12,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"922fd37b-0dcc-49ee-9bb9-41b6a3d4b565\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T19:06:18.000000Z\",\n            \"updated_at\": \"2025-11-16T19:06:18.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\",\n                \"slug\": \"gateway1\",\n                \"is_active\": true,\n                \"priority\": 1,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"74a2ced1-b7d0-41bc-88f3-62080ed542c5\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T19:07:18.000000Z\",\n            \"updated_at\": \"2025-11-16T19:07:19.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 14,\n            \"client_id\": 2,\n            \"gateway_id\": 2,\n            \"external_id\": \"43b4a5f3-8b35-450a-827c-487b06570d31\",\n            \"status\": \"paid\",\n            \"amount\": \"99.99\",\n            \"card_last_numbers\": \"0002\",\n            \"created_at\": \"2025-11-16T19:30:10.000000Z\",\n            \"updated_at\": \"2025-11-16T19:30:10.000000Z\",\n            \"client\": {\n                \"id\": 2,\n                \"name\": \"Carlos\",\n                \"email\": \"carlos@example.com\",\n                \"created_at\": \"2025-11-16T19:30:10.000000Z\",\n                \"updated_at\": \"2025-11-16T19:30:10.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 15,\n            \"client_id\": 2,\n            \"gateway_id\": 2,\n            \"external_id\": \"22a9f03d-817b-4fe9-a77f-2c3a5d7c2599\",\n            \"status\": \"paid\",\n            \"amount\": \"99.99\",\n            \"card_last_numbers\": \"0002\",\n            \"created_at\": \"2025-11-16T19:30:12.000000Z\",\n            \"updated_at\": \"2025-11-16T19:30:12.000000Z\",\n            \"client\": {\n                \"id\": 2,\n                \"name\": \"Carlos\",\n                \"email\": \"carlos@example.com\",\n                \"created_at\": \"2025-11-16T19:30:10.000000Z\",\n                \"updated_at\": \"2025-11-16T19:30:10.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 16,\n            \"client_id\": 2,\n            \"gateway_id\": 2,\n            \"external_id\": \"6ef0df78-d99e-4373-9319-a0a09be0bbca\",\n            \"status\": \"paid\",\n            \"amount\": \"99.99\",\n            \"card_last_numbers\": \"0002\",\n            \"created_at\": \"2025-11-16T20:05:32.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:32.000000Z\",\n            \"client\": {\n                \"id\": 2,\n                \"name\": \"Carlos\",\n                \"email\": \"carlos@example.com\",\n                \"created_at\": \"2025-11-16T19:30:10.000000Z\",\n                \"updated_at\": \"2025-11-16T19:30:10.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 17,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"f92bf61e-156e-4959-b86f-d721979bd977\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:36.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:36.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 18,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"e830c318-af41-40a0-8f61-dbf57acd79b3\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:38.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:38.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 19,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"372c5d3b-08b0-4b5d-be60-1cc87d671fc3\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:45.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:45.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 20,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"3e670e72-c623-4342-9b50-6255d236cd9b\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:46.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:46.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 21,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"8b193b1d-a854-4c16-a366-2523470fc89f\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:47.000000Z\",\n            \"updated_at\": \"2025-11-16T20:05:47.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 22,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"1f75d713-a8db-459c-8273-9093150c89e6\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:05:57.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:01.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\",\n                \"slug\": \"gateway1\",\n                \"is_active\": true,\n                \"priority\": 1,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"205f82ee-a0b1-4fd7-89a9-6856e33d75c1\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:04.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:08.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\",\n                \"slug\": \"gateway1\",\n                \"is_active\": true,\n                \"priority\": 1,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"client_id\": 1,\n            \"gateway_id\": 1,\n            \"external_id\": \"85fe95e7-a286-42f4-9d1f-0378a9226e18\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:30.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:31.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 1,\n                \"name\": \"Gateway 1\",\n                \"slug\": \"gateway1\",\n                \"is_active\": true,\n                \"priority\": 1,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"59a7273e-e4be-4810-8a87-c3e96711f365\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:06:49.000000Z\",\n            \"updated_at\": \"2025-11-16T20:06:58.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"713e5c5a-f467-46c9-904f-259c881e7de5\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:07:00.000000Z\",\n            \"updated_at\": \"2025-11-16T20:07:04.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"client_id\": 1,\n            \"gateway_id\": 2,\n            \"external_id\": \"9ed5b945-9d7a-491e-8167-0dd6b27d2adc\",\n            \"status\": \"paid\",\n            \"amount\": \"563.73\",\n            \"card_last_numbers\": \"1111\",\n            \"created_at\": \"2025-11-16T20:09:21.000000Z\",\n            \"updated_at\": \"2025-11-16T20:09:25.000000Z\",\n            \"client\": {\n                \"id\": 1,\n                \"name\": \"Maria\",\n                \"email\": \"maria@example.com\",\n                \"created_at\": \"2025-11-16T18:56:50.000000Z\",\n                \"updated_at\": \"2025-11-16T18:56:50.000000Z\"\n            },\n            \"gateway\": {\n                \"id\": 2,\n                \"name\": \"Gateway 2\",\n                \"slug\": \"gateway2\",\n                \"is_active\": true,\n                \"priority\": 2,\n                \"created_at\": \"2025-11-16T18:05:59.000000Z\",\n                \"updated_at\": \"2025-11-16T18:05:59.000000Z\"\n            }\n        }\n    ],\n    \"first_page_url\": \"http://localhost/api/transactions?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost/api/transactions?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"pagination.previous\",\n            \"page\": null,\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost/api/transactions?page=1\",\n            \"label\": \"1\",\n            \"page\": 1,\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"pagination.next\",\n            \"page\": null,\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost/api/transactions\",\n    \"per_page\": 20,\n    \"prev_page_url\": null,\n    \"to\": 16,\n    \"total\": 16\n}"
+						}
+					]
+				},
+				{
+					"name": "View transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/transactions/:transaction_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"transactions",
+								":transaction_id"
+							],
+							"variable": [
+								{
+									"key": "transaction_id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/transactions/:transaction_id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"transactions",
+										":transaction_id"
+									],
+									"variable": [
+										{
+											"key": "transaction_id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:45:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"client_id\": 1,\n    \"gateway_id\": 1,\n    \"external_id\": \"922fd37b-0dcc-49ee-9bb9-41b6a3d4b565\",\n    \"status\": \"paid\",\n    \"amount\": \"563.73\",\n    \"card_last_numbers\": \"1111\",\n    \"created_at\": \"2025-11-16T19:06:18.000000Z\",\n    \"updated_at\": \"2025-11-16T19:06:18.000000Z\",\n    \"gateway\": {\n        \"id\": 1,\n        \"name\": \"Gateway 1\",\n        \"slug\": \"gateway1\"\n    },\n    \"products\": [\n        {\n            \"id\": 23,\n            \"quantity\": 1,\n            \"product_id\": 1,\n            \"transaction_id\": 12,\n            \"product\": {\n                \"id\": 1,\n                \"name\": \"Produto X\",\n                \"amount\": \"99.99\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "refund transaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/transactions/:transaction_id/refund",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"transactions",
+								":transaction_id",
+								"refund"
+							],
+							"variable": [
+								{
+									"key": "transaction_id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refund transaction 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/transactions/:transaction_id/refund",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"transactions",
+										":transaction_id",
+										"refund"
+									],
+									"variable": [
+										{
+											"key": "transaction_id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:45:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Reembolso realizado com sucesso.\",\n    \"transaction\": {\n        \"id\": 12,\n        \"client_id\": 1,\n        \"gateway_id\": 1,\n        \"external_id\": \"922fd37b-0dcc-49ee-9bb9-41b6a3d4b565\",\n        \"status\": \"refunded\",\n        \"amount\": \"563.73\",\n        \"card_last_numbers\": \"1111\",\n        \"created_at\": \"2025-11-16T19:06:18.000000Z\",\n        \"updated_at\": \"2025-11-17T00:45:27.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "refund transaction 404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/transactions/:transaction_id/refund",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"transactions",
+										":transaction_id",
+										"refund"
+									],
+									"variable": [
+										{
+											"key": "transaction_id",
+											"value": "9999"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Nov 2025 00:45:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Recurso não encontrado.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"client\": {\r\n    \"name\": \"Maria\",\r\n    \"email\": \"maria@example.com\"\r\n  },\r\n  \"payment\": {\r\n    \"cardNumber\": \"4111111111111111\",\r\n    \"cvv\": \"123\",\r\n    \"expiry\": \"12/30\"\r\n  },\r\n  \"products\": [\r\n    {\r\n      \"id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"checkout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Checkout 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": {\r\n    \"name\": \"Maria\",\r\n    \"email\": \"maria@example.com\"\r\n  },\r\n  \"payment\": {\r\n    \"cardNumber\": \"4111111111111111\",\r\n    \"cvv\": \"123\",\r\n    \"expiry\": \"12/30\"\r\n  },\r\n  \"products\": [\r\n    {\r\n      \"id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Nov 2025 00:48:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"transaction\": {\n        \"id\": 29,\n        \"client_id\": 1,\n        \"gateway_id\": 1,\n        \"external_id\": \"48f18f28-3e23-40aa-861b-07fec57fb13d\",\n        \"status\": \"paid\",\n        \"amount\": \"563.73\",\n        \"card_last_numbers\": \"1111\",\n        \"created_at\": \"2025-11-17T00:48:00.000000Z\",\n        \"updated_at\": \"2025-11-17T00:48:00.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "Checkout 422",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client\": {\r\n    \"name\": \"Maria\",\r\n    \"email\": \"maria@example.com\"\r\n  },\r\n  \"payment\": {\r\n    \"cardNumber\": \"4111111111111111\",\r\n    \"cvv\": \"123\",\r\n    \"expiry\": \"12/30\"\r\n  },\r\n  \"products\": [\r\n    {\r\n      \"id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"checkout"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.14"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 17 Nov 2025 00:45:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Produto não encontrado.\",\n    \"errors\": {\n        \"products.1.id\": [\n            \"Produto não encontrado.\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{api_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_token",
+			"value": ""
+		}
+	]
+}
