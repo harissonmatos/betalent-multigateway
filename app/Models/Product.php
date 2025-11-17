@@ -9,9 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    /**
-     * Campos permitidos para atribuição em massa (fillable)
-     */
     protected $fillable = [
         'name',
         'amount',
