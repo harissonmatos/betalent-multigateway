@@ -35,10 +35,6 @@ class TransactionController extends Controller
 
     public function refund(Transaction $transaction)
     {
-        if (!in_array(auth()->user()->role, ['ADMIN', 'FINANCE'])) {
-            return response()->json(['message' => 'Acesso negado'], 403);
-        }
-
         if ($transaction->status !== 'paid') {
             return response()->json([
                     'message' => 'Esta transação não pode ser reembolsada.'
