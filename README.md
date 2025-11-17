@@ -2,15 +2,14 @@
 
 ### Framework escolhido
 
-- [Laravel](https://laravel.com/) 12 PHP 8.2 ✅
+- [Laravel](https://laravel.com/) 12 - PHP 8.2 ✅
 
 ## 🧰 Requisitos locais
 
 Certifique-se de ter as ferramentas abaixo antes de iniciar:
 
 - [Git](https://git-scm.com/) para clonar o repositório
-- [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/) (Laravel Sail usa
-  os dois)
+- [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/)
 
 - Requisitos que já estão no compose.yml (não precisa instalar)
     - PHP 8.2+ e Composer instalados **ou** apenas o Sail (você pode chamar `composer`, `npm` e Artisan via
