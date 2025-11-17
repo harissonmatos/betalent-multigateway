@@ -26,17 +26,13 @@ class CheckoutController extends Controller
         $validated = $request->validated();
 
         return DB::transaction(function () use ($validated) {
-
-            // 1️⃣ Cliente (cria ou pega)
             $client = Client::firstOrCreate(
                 ['email' => $validated['client']['email']],
                 ['name' => $validated['client']['name']]
             );
 
-            // 2️⃣ Calcula total
             $totalAmount = $this->calculateTotal($validated['products']);
 
-            // 3️⃣ Cria transação pendente
             $transaction = Transaction::create([
                 'client_id' => $client->id,
                 'amount' => $totalAmount,
@@ -44,7 +40,6 @@ class CheckoutController extends Controller
                 'card_last_numbers' => substr($validated['payment']['cardNumber'], -4),
             ]);
 
-            // 4️⃣ Registra produtos da transação
             foreach ($validated['products'] as $item) {
                 TransactionProduct::create([
                     'transaction_id' => $transaction->id,
@@ -53,13 +48,11 @@ class CheckoutController extends Controller
                 ]);
             }
 
-            // 5️⃣ Realiza cobrança usando prioridade
             $paymentResult = $this->performPayment(
                 $validated,
                 $transaction
             );
 
-            // 6️⃣ Atualiza transação com gateway utilizado
             $transaction->update([
                 'gateway_id'  => $paymentResult['gateway_id'],
                 'external_id' => $paymentResult['external_id'] ?? null,
@@ -95,7 +88,6 @@ class CheckoutController extends Controller
             cvv: $validated['payment']['cvv'],
         );
 
-        // Tenta com base na prioridade
         $gateways = \App\Models\Gateway::where('is_active', true)
             ->orderBy('priority')
             ->get();
