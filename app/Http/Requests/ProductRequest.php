@@ -13,8 +13,6 @@ class ProductRequest extends FormRequest
 
     public function rules(): array
     {
-        $productId = $this->route('product')?->id;
-
         return [
             'name' => $this->isMethod('post') ? 'required' : 'nullable',
             'amount' => $this->isMethod('post')
