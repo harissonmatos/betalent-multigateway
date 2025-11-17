@@ -42,23 +42,27 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Gateways
     Route::middleware('role:ADMIN')->group(function () {
-        Route::get('/gateways', [GatewayController::class, 'index']);
         Route::put('/gateways/{gateway}/activate', [GatewayController::class, 'activate']);
         Route::put('/gateways/{gateway}/deactivate', [GatewayController::class, 'deactivate']);
         Route::put('/gateways/{gateway}/priority', [GatewayController::class, 'updatePriority']);
     });
+    Route::middleware('role:ADMIN,MANAGER,FINANCE,USER')->group(function () {
+        Route::get('/gateways', [GatewayController::class, 'index']);
+    });
 
     // Clients
-    Route::middleware('role:ADMIN,MANAGER')->group(function () {
+    Route::middleware('role:ADMIN,MANAGER,FINANCE,USER')->group(function () {
         Route::get('/clients', [ClientController::class, 'index']);
         Route::get('/clients/{client}', [ClientController::class, 'show']);
     });
 
     // Transactions
-    Route::middleware('role:ADMIN,MANAGER')->group(function () {
+    Route::middleware('role:ADMIN,MANAGER,FINANCE,USER')->group(function () {
         Route::get('/transactions', [TransactionController::class, 'index']);
         Route::get('/transactions/{transaction}', [TransactionController::class, 'show']);
     });
+
+    // Refund
     Route::middleware('role:ADMIN,FINANCE')->group(function () {
         Route::put('/transactions/{transaction}/refund', [TransactionController::class, 'refund']);
     });
