@@ -1,3 +1,17 @@
+![PHP](https://img.shields.io/badge/PHP-%5E8.2-777BB4?logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-%5E12.0-FF2D20?logo=laravel&logoColor=white)
+![Sanctum](https://img.shields.io/badge/Sanctum-%5E4.0-FF2D20?logo=laravel&logoColor=white)
+
+![Code Style](https://img.shields.io/badge/Code_Style-PSR--12-4F5D95?logo=php)
+![Pint](https://img.shields.io/badge/Laravel-Pint-FF2D20?logo=laravel)
+
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?logo=docker&logoColor=white)
+![Sail](https://img.shields.io/badge/Laravel-Sail-FF2D20?logo=laravel&logoColor=white)
+
+![TDD](https://img.shields.io/badge/TDD-Test_Driven_Development-2ecc71?logo=jest&logoColor=white)
+![PHPUnit](https://img.shields.io/badge/Tests-PHPUnit-6C3483?logo=php&logoColor=white)
+
 # Teste Prático Back-end BeTalent
 
 ### Framework escolhido
@@ -217,8 +231,10 @@ Requerem token do login.
 
 - Entender as mudanças e novos recursos trazidos pelo Laravel 12 tomou mais tempo do que o previsto.
 - Esqueci que o banco de testes é isolado e limpo a cada execução, o que causou falhas até ajustar os cenários.
-- Ao rodar os testes percebi que a factory de Gateways gerava dados errados; removi a factory e substituí por um seeder com exatamente dois registros controlados.
-- Precisei finalizar a API de última hora porque tive problemas de saúde no período inicial do teste, o que atrasou bastante o cronograma.
+- Ao rodar os testes percebi que a factory de Gateways gerava dados errados; removi a factory e substituí por um seeder
+  com exatamente dois registros controlados.
+- Precisei finalizar a API de última hora porque tive problemas de saúde no período inicial do teste, o que atrasou
+  bastante o cronograma.
 
 ## Melhorias Futuras
 
