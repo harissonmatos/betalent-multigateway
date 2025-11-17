@@ -4,7 +4,7 @@
 
 - [Laravel](https://laravel.com/) 12 - PHP 8.2 ✅
 
-## 🧰 Requisitos locais
+## Requisitos locais
 
 Certifique-se de ter as ferramentas abaixo antes de iniciar:
 
@@ -16,7 +16,7 @@ Certifique-se de ter as ferramentas abaixo antes de iniciar:
       `./vendor/bin/sail ...`)
     - Node.js 18+ / npm caso queira rodar o Vite no host (opcional para o teste)
 
-## 🚀 Como rodar o projeto
+## Como rodar o projeto
 
 1. **Clonar o repositório**
    ```bash
@@ -56,9 +56,9 @@ Certifique-se de ter as ferramentas abaixo antes de iniciar:
 
 > Para derrubar os containers: `./vendor/bin/sail down`.
 
-## 📊 Níveis de implementação
+## Nível de implementação escolhido
 
-### Nível 3 - Nível Escolhido ✅
+### Nível 3 ✅
 
 Escolha esse nível se você é pleno ou sênior, por exemplo:
 
@@ -73,7 +73,7 @@ Escolha esse nível se você é pleno ou sênior, por exemplo:
 - Docker compose com MySQL, aplicação e mock dos gateways ✅
     - Usei o laravel sail (por agilidade) e adicionei os gateways no compose.yml mas poderia fazer do zero também ✅
 
-## 🗄 Estrutura do Banco de Dados
+## Estrutura do Banco de Dados
 
 O banco de dados deve ser estruturado à sua escolha, mas minimamente deve conter:
 
@@ -103,7 +103,7 @@ O banco de dados deve ser estruturado à sua escolha, mas minimamente deve conte
     - amount
     - card_last_numbers
 
-## 🛣 Rotas do Sistema
+## Rotas do Sistema
 
 ### Rotas Públicas
 
@@ -124,7 +124,7 @@ O banco de dados deve ser estruturado à sua escolha, mas minimamente deve conte
 - Detalhes de uma compra ✅
 - Realizar reembolso de uma compra junto ao gateway com validação por roles ✅
 
-## 📑 Documentação Detalhada da API
+## Documentação Detalhada da API
 
 A coleção `API.postman_collection.json`, distribuída neste repositório, pode ser importada no Postman/Insomnia para
 testar cada rota. Todas as respostas são JSON e, salvo menção em contrário, usam `Content-Type: application/json`. O
@@ -196,7 +196,7 @@ Requerem token do login.
 > **Dica:** cada rota acima já está configurada na coleção Postman com exemplos de requisição e resposta (Ex.: “Checkout
 > 201” e “Checkout 422”), facilitando a validação manual.
 
-## 🔧 Requisitos Técnicos
+## Requisitos Técnicos
 
 ### Obrigatórios
 
@@ -212,3 +212,15 @@ Requerem token do login.
     - Outras informações relevantes
 - Implementar TDD ✅
 - Docker compose com MySQL, aplicação e mock dos gateways ✅
+
+## Dificuldades Enfrentadas
+
+- Entender as mudanças e novos recursos trazidos pelo Laravel 12 tomou mais tempo do que o previsto.
+- Esqueci que o banco de testes é isolado e limpo a cada execução, o que causou falhas até ajustar os cenários.
+- Ao rodar os testes percebi que a factory de Gateways gerava dados errados; removi a factory e substituí por um seeder com exatamente dois registros controlados.
+- Precisei finalizar a API de última hora porque tive problemas de saúde no período inicial do teste, o que atrasou bastante o cronograma.
+
+## Melhorias Futuras
+
+- Implementar filas com Redis para tornar o checkout totalmente assíncrono e mais resiliente.
+- Aprimorar ainda mais a documentação para facilitar o on-boarding e o consumo da API.
