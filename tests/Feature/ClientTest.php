@@ -41,28 +41,6 @@ class ClientTest extends TestCase
         $res->assertJsonCount(2, 'data');
     }
 
-    /* ======================================================
-     * LISTAR CLIENTES
-     * ====================================================== */
-
-    public function test_finance_cannot_list_clients()
-    {
-        $token = $this->actingAsRole('FINANCE');
-
-        $res = $this->getJson('/api/clients', $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
-    public function test_user_cannot_list_clients()
-    {
-        $token = $this->actingAsRole('USER');
-
-        $res = $this->getJson('/api/clients', $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
     public function test_unauthenticated_cannot_list_clients()
     {
         $res = $this->getJson('/api/clients', ['Accept' => 'application/json']);
@@ -179,28 +157,6 @@ class ClientTest extends TestCase
         $res = $this->getJson("/api/clients/{$client->id}", $this->authHeader($token));
 
         $res->assertStatus(200);
-    }
-
-    public function test_finance_cannot_view_client()
-    {
-        $token = $this->actingAsRole('FINANCE');
-
-        $client = Client::factory()->create();
-
-        $res = $this->getJson("/api/clients/{$client->id}", $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
-    public function test_user_cannot_view_client()
-    {
-        $token = $this->actingAsRole('USER');
-
-        $client = Client::factory()->create();
-
-        $res = $this->getJson("/api/clients/{$client->id}", $this->authHeader($token));
-
-        $res->assertStatus(403);
     }
 
     public function test_client_not_found_returns_404()

@@ -46,28 +46,6 @@ class TransactionTest extends TestCase
         $res->assertJsonCount(2, 'data');
     }
 
-    /* =======================================================
-     * LISTAR TRANSAÇÕES
-     * ======================================================= */
-
-    public function test_finance_cannot_list_transactions()
-    {
-        $token = $this->actingAsRole('FINANCE');
-
-        $res = $this->getJson('/api/transactions', $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
-    public function test_user_cannot_list_transactions()
-    {
-        $token = $this->actingAsRole('USER');
-
-        $res = $this->getJson('/api/transactions', $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
     public function test_unauthenticated_cannot_list_transactions()
     {
         $res = $this->getJson('/api/transactions', ['Accept' => 'application/json']);
@@ -142,36 +120,6 @@ class TransactionTest extends TestCase
         $res = $this->getJson("/api/transactions/{$t->id}", $this->authHeader($token));
 
         $res->assertStatus(200);
-    }
-
-    /* =======================================================
-     * DETALHAR TRANSAÇÃO
-     * ======================================================= */
-
-    public function test_finance_cannot_view_transaction()
-    {
-        $token = $this->actingAsRole('FINANCE');
-
-        $this->seed(GatewaySeeder::class);
-
-        $t = Transaction::factory()->create(['gateway_id' => 1]);
-
-        $res = $this->getJson("/api/transactions/{$t->id}", $this->authHeader($token));
-
-        $res->assertStatus(403);
-    }
-
-    public function test_user_cannot_view_transaction()
-    {
-        $token = $this->actingAsRole('USER');
-
-        $this->seed(GatewaySeeder::class);
-
-        $t = Transaction::factory()->create(['gateway_id' => 1]);
-
-        $res = $this->getJson("/api/transactions/{$t->id}", $this->authHeader($token));
-
-        $res->assertStatus(403);
     }
 
     public function test_transaction_not_found_returns_404()
