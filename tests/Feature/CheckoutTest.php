@@ -75,7 +75,7 @@ class CheckoutTest extends TestCase
         ]);
 
         // Assert – HTTP ok
-        $response->assertStatus(200);
+        $response->assertStatus(201);
         $response->assertJson(['success' => true]);
 
         // Assert – cliente criado
@@ -178,7 +178,7 @@ class CheckoutTest extends TestCase
         ]);
 
         // Assert – HTTP ok
-        $response->assertStatus(200);
+        $response->assertStatus(201);
         $response->assertJson(['success' => true]);
 
         // Assert – cliente criado
@@ -327,7 +327,7 @@ class CheckoutTest extends TestCase
             ]
         ]);
 
-        $response->assertStatus(200); // Bad Gateway
+        $response->assertStatus(201);
         $response->assertJson([
             'success' => true,
             'transaction' => [

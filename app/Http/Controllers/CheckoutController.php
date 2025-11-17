@@ -69,7 +69,7 @@ class CheckoutController extends Controller
             return response()->json([
                 'success'     => true,
                 'transaction' => $transaction->fresh(),
-            ]);
+            ], 201);
         });
     }
 
